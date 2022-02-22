@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'org.sudhanshu.testframework'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    testImplementation group: 'org.testng', name: 'testng', version: '7.5'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: '2.6.3'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.22'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.6.3'
+    implementation group: 'org.springframework', name: 'spring-web', version: '5.3.16'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.1.2'
+
+}
+
+test {
+    useTestNG()
+}
