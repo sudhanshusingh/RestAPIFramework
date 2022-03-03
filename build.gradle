@@ -18,7 +18,12 @@ dependencies {
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.6.3'
     implementation group: 'org.springframework', name: 'spring-web', version: '5.3.16'
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.1.2'
-
+    testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '2.6.4'
+    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.2.0'
+    implementation group: 'com.mashape.unirest', name: 'unirest-java', version: '1.4.9'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.1'
+    implementation group: 'org.everit.json', name: 'org.everit.json.schema', version: '1.5.1'
+    compileOnly 'org.apache.commons:commons-configuration2:2.7'
 }
 
 test {
