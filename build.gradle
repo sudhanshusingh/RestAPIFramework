@@ -26,6 +26,32 @@ dependencies {
     compileOnly 'org.apache.commons:commons-configuration2:2.7'
 }
 
+task javadoc(type : javadoc){
+    source = sourceSets.main.allJava
+    failOnError false
+}
+
+task javaDocJar(type: jar, dependsOn: classes){
+    classifier = "sources"
+    from sourceSets.main.allSource
+}
+
+if (JavaVersion.current().isJava8Compatible()){
+    allprojects {
+        tasks.withType(Javadoc){
+            options.addStringOption("xdoclint:none", "-quite")
+        }
+    }
+}
+
+task fatJar(type: jar){
+    zip64 = true
+    manifest{
+        attributes "Implementation-Title": "Fat Jar"
+    }
+    baseName = jar.getArchiveBaseName() + "-all" + version
+}
+
 test {
     useTestNG()
 }
