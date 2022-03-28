@@ -1,6 +1,6 @@
 package api;
 
-public class ResponseHandler {
+public class ResponseHandler<T> {
 
-
+    public T data;
 }

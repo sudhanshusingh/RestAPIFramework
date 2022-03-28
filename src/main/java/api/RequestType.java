@@ -2,9 +2,16 @@ package api;
 
 public class RequestType {
 
-    private ResponseHandler responseHandler = null;
+    private ResponseHandler responseHandler;
+    private Specification specification;
+    private RequestBody requestBody;
 
-    public ResponseHandler GET(){return responseHandler;}
+    public RequestType(Specification specification, RequestBody requestBody){
+        this.specification = specification;
+        this.requestBody = requestBody;
+    }
 
-    public ResponseHandler POST(Specification specification, RequestBody requestBody){return responseHandler;}
+    public RequestType(Specification specification){
+        this.specification = specification;
+    }
 }

@@ -24,9 +24,10 @@ dependencies {
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.1'
     implementation group: 'org.everit.json', name: 'org.everit.json.schema', version: '1.5.1'
     compileOnly 'org.apache.commons:commons-configuration2:2.7'
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.9.0'
 }
 
-task javadoc(type : javadoc){
+/*task javadoc(type : javadoc){
     source = sourceSets.main.allJava
     failOnError false
 }
@@ -50,7 +51,7 @@ task fatJar(type: jar){
         attributes "Implementation-Title": "Fat Jar"
     }
     baseName = jar.getArchiveBaseName() + "-all" + version
-}
+}*/
 
 test {
     useTestNG()
